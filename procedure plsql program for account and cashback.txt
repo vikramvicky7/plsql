@@ -1,0 +1,36 @@
+creating a table for account
+...............................
+
+create table account ( 
+    account_id number constraint account_pk primary key, 
+    name varchar2(30), 
+    balance number 
+)
+
+procedure
+...................
+create or replace procedure debit (  
+    withdraw in  number,  
+    acc_id in number  
+)  
+is  
+cashback number; 
+final_balance number; 
+begin  
+cashback:=0.01*withdraw;  
+  
+  update account set balance=balance-withdraw where account_id=acc_id;  
+  
+  update account set balance=balance+cashback where account_id=acc_id;   
+  select balance into final_balance from account where account_id=acc_id; 
+  dbms_output.put_line('final_balance is' || final_balance); 
+  
+    
+end debit;
+
+invoke the procedure
+.....................
+
+begin  
+debit(5000,1); 
+end;

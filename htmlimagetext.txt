@@ -1,0 +1,16 @@
+function Increasesize(){
+    var h = document.getElementById("img").height;
+    var w = document.getElementById('img').width;
+
+    var h = document.getElementById("img").height += 50;
+    var w = document.getElementById("img").width += 50;
+}
+
+function Decreasesize(){
+    var h = document.getElementById("img").height;
+    var w = document.getElementById("img").width;
+
+   
+    var h = document.getElementById("img").height -= 50;
+    var w = document.getElementById("img").width -= 50;
+}

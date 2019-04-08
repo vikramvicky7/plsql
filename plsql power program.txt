@@ -1,0 +1,21 @@
+declare 
+
+x number:=21;
+
+y number:=3;
+
+result number:=1;
+
+begin
+
+for i in 1..y
+ loop
+
+result:=result*x;
+
+end loop;
+
+DBMS_OUTPUT.PUT_LINE(result);
+
+end;
+

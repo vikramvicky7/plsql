@@ -1,0 +1,22 @@
+varray program to store locations order by
+
+declare
+
+    TYPE locations is varray(30) of number;
+
+    loc_id locations;
+
+BEGIN
+    
+    SELECT location_id bulk collect into loc_id from hr.locations  order by  location_id desc;
+
+    for i in loc_id.first..loc_id.last
+
+loop
+    
+    DBMS_OUTPUT.PUT_LINE(loc_id(i));
+
+end loop;
+
+end;
+

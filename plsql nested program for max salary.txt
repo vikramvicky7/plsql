@@ -1,0 +1,22 @@
+nested plsql program for max salary of department
+declare
+
+    TYPE department is table of number;
+
+    dept_sal department;
+
+begin
+    
+    select max(salary) bulk collect into dept_sal from hr.employees group by department_id;
+
+    for i in dept_sal.first..dept_sal.last
+
+loop
+    
+    DBMS_OUTPUT.PUT_LINE(dept_sal(i));
+
+    end loop; 
+
+end;
+    
+    

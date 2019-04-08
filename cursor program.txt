@@ -1,0 +1,17 @@
+cursor program
+...................
+
+
+declare 
+      y_locationid hr.locations.location_id%type; 
+      y_city hr.locations.city%type; 
+    cursor c1 is select location_id,city from hr.locations; 
+begin 
+    open c1; 
+loop 
+    fetch c1 into y_locationid,y_city; 
+    exit when c1 %notfound; 
+    DBMS_OUTPUT.PUT_LINE(y_locationid|| ',' || y_city); 
+end loop; 
+close c1; 
+end;

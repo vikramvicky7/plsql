@@ -1,0 +1,26 @@
+declare
+
+a number:=10;
+
+b number:=12;
+
+grade char(1);
+
+begin
+grade:='+';
+
+case grade
+
+when '+' then DBMS_OUTPUT.PUT_LINE(a+b);
+
+when '*' then DBMS_OUTPUT.PUT_LINE(a*b);
+
+when '-' then DBMS_OUTPUT.PUT_LINE(a-b);
+
+when '/' then DBMS_OUTPUT.PUT_LINE(a/b);
+
+else DBMS_OUTPUT.PUT_LINE('not found');
+
+end case;
+
+end;

@@ -1,0 +1,39 @@
+declare
+
+a number:=2;
+
+begin
+
+for i in 1..10 loop
+
+DBMS_OUTPUT.PUT_LINE(a*i);
+
+end loop;
+
+end;
+
+
+
+
+
+
+declare
+
+a number:=10;
+
+i number:=1;
+
+begin
+
+while i<=10
+
+loop
+
+DBMS_OUTPUT.PUT_LINE(a*i);
+
+i:=i+1;
+
+end loop;
+
+end;
+

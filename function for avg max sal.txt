@@ -1,0 +1,32 @@
+function for avg salary
+
+create or replace function maxsal return number
+ 
+     as
+
+     maxsal number;
+
+begin
+ 
+      select avg(max(salary)) into maxsal from hr.employees group by department_id;
+
+return maxsal;
+  
+end maxsal;
+  
+
+
+declare
+ 
+   a number;
+
+begin
+
+   a:=maxsal();
+
+   DBMS_OUTPUT.PUT_LINE(a);
+end;
+
+
+
+function name and variable name should differ otherwise it gets confused what to execute 

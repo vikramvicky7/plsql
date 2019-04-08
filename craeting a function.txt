@@ -1,0 +1,21 @@
+  first create a function and then use when it is needed multiple times.
+
+ create function print_hello return varchar2 is
+ 
+begin 
+
+    return 'hello world';
+
+end print_hello;
+
+declare
+
+   msg varchar(100);
+
+begin
+
+   msg:=print_hello();
+
+   DBMS_OUTPUT.PUT_LINE(msg);
+
+end;

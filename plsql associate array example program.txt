@@ -1,0 +1,31 @@
+declare
+ 
+     TYPE DEPARTMENT is TABLE OF NUMBER
+  
+     INDEX BY VARCHAR2(30);
+  
+     DEPARTMENT_salary department;
+
+     i VARCHAR2(30);
+
+begin
+     
+     DEPARTMENT_salary('engineer'):= 60000;
+ 
+     DEPARTMENT_salary(' junior engineer'):= 42000;
+ 
+     DEPARTMENT_salary('senior engineer'):= 30000;
+     
+     i:= DEPARTMENT_salary.first;
+
+loop
+     
+     DBMS_OUTPUT.PUT_LINE(DEPARTMENT_salary(i));
+     
+     i:=DEPARTMENT_salary.next(i);
+     
+     exit when i is null;
+
+end loop;
+
+end;

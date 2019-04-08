@@ -1,0 +1,34 @@
+procedure to increment avg sal by 3%
+...........................................
+
+create or replace procedure sal_increment
+
+is
+  
+      avg number;
+      
+      type newsalary is table of number;
+
+      newsal newsalary;
+
+begin
+      
+      select avg(salary) into avg from hr.employees;
+
+      select salary+(salary/100*3) bulk collect  into newsal from hr.employees where salary>avg;
+
+      for i in newsal.first..newsal.last
+loop
+      
+      DBMS_OUTPUT.PUT_LINE(newsal(i));
+    
+  end loop;
+
+end sal_increment;
+
+
+begin
+
+    sal_increment();
+
+end;

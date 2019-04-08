@@ -1,0 +1,23 @@
+trigger program for updating
+..............................
+
+create table account ( 
+    account_id number not null constraint account_pk primary key, 
+    name varchar2(50) not null, 
+    balance number 
+)
+
+insert into account(account_id,name,balance) values ('101','vikram',25000)
+
+
+create or replace trigger biu_account 
+before insert or update on account 
+for each row 
+begin 
+   
+    if updating then 
+         if :new.balance < 5000 then 
+         raise_application_error(-20100,'reached low balance'); 
+    end if; 
+    end if; 
+end;

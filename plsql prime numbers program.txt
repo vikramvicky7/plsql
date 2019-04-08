@@ -1,0 +1,22 @@
+declare
+
+i number:=1;
+
+begin
+
+while i<=100 
+
+loop
+
+if mod(i,2)=0 then
+
+DBMS_OUTPUT.PUT_LINE(i);
+
+end if;
+
+i:=i+1;
+
+end loop;
+
+end;
+

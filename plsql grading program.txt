@@ -1,0 +1,39 @@
+declare
+
+a number:=80;
+
+b number:=98;
+
+c number:=81;
+
+d number:=79;
+
+e number:=10;
+res number:=0;
+
+total number:=0;
+
+begin
+total:=(a+b+c+d+e);
+
+DBMS_OUTPUT.PUT_LINE(total);
+
+res:=(a+b+c+d+e)/5;
+
+DBMS_OUTPUT.PUT_LINE(res);
+
+if (res>85 and res<100) then
+
+DBMS_OUTPUT.PUT_LINE('GRADE A');
+
+elsif (res>75 and res<85) then
+
+DBMS_OUTPUT.PUT_LINE('GRADE B');
+
+elsif (res>30 and res<75) then
+
+DBMS_OUTPUT.PUT_LINE('fail');
+
+end if;
+
+end;
